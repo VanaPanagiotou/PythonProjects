@@ -60,6 +60,6 @@ def main(args):
 
 
 if __name__ == '__main__':
-    file = open('passwords_to_be_checked.txt', 'r')  # txt files with passwords that we want to check
+    file = open('passwords_to_be_checked.txt', 'r')  # txt file with passwords that we want to check
     lines = file.read().splitlines()
     main(lines)
