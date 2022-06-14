@@ -1,4 +1,4 @@
-# PythonProjects
+# Python Projects
 Python Projects of Complete Python Developer Udemy Course
 
 # 1. Check my password
