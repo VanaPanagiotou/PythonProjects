@@ -3,7 +3,7 @@ from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
 import pprint
-
+import csv
 
 session = requests.Session()
 # Retry 3 times in case of requests.exceptions.ConnectionError
@@ -53,9 +53,13 @@ def create_custom_hn(links, subtext):
 
 # Print a pretty version of the list with titles, links and votes of the first 3 pages of Hacker News website,
 # taking into consideration only stories that have more than 100 votes
-pprint.pprint(create_custom_hn(all_pages_links, all_pages_subtext))
+scraped_data = create_custom_hn(all_pages_links, all_pages_subtext)
+pprint.pprint(scraped_data)
 
-
-
+# Write the scraped data to a csv file
+with open('Scraped_Data.csv', 'w', encoding='utf8', newline='') as output_file:
+    fc = csv.DictWriter(output_file, fieldnames=scraped_data[0].keys())
+    fc.writeheader()
+    fc.writerows(scraped_data)
 
 
