@@ -11,3 +11,5 @@ Simple Twitter Bot using Twitter API v2 with Tweepy 4.10.0
 - Developer account, API keys and tokens
 - Tweepy version 4.x
  
+# 3. Web Scraping
+Scrape the first 3 pages of Hacker News Website
